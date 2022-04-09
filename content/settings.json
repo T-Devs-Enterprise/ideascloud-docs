@@ -1,0 +1,10 @@
+{
+  "title": "IC Docs",
+  "url": "/docs",
+  "logo": {
+    "light": "/logo.png",
+    "dark": "/logo-dark.png"
+  },
+  "github": "nuxt/content",
+  "twitter": "ideascloud"
+}
