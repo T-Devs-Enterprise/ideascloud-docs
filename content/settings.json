@@ -1,10 +1,9 @@
 {
   "title": "IC Docs",
-  "url": "/docs",
   "logo": {
     "light": "/logo.png",
     "dark": "/logo-dark.png"
   },
-  "github": "nuxt/content",
+  "github": "T-Devs-Enterprise/ideascloud-docs",
   "twitter": "ideascloud"
 }

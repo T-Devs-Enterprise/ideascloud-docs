@@ -4,14 +4,15 @@ export default theme({
   docs: {
     primaryColor: "#3e76df",
   },
+  //components: true,
   content: {
     //apiPrefix: "testVue#/",
-  },
-  contents: {
+    liveEdit: false,
     markdown: {
       remarkPlugins: ["~~/plugins/contributors.js"],
     },
   },
+
   head: {
     link: [{ rel: "icon", type: "image/x-icon", href: "/icon.png" }],
   },
