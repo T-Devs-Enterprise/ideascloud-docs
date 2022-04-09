@@ -10,7 +10,7 @@ export default theme({
   modules: ["@nuxt/image"],
   content: {
     //apiPrefix: "testVue#/",
-    liveEdit: false,
+    liveEdit: true,
     markdown: {
       remarkPlugins: ["~~/plugins/contributors.js"],
     },
