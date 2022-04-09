@@ -1,8 +1,7 @@
 <template >
   <div>
-    <h1>TEst</h1>
-    <div v-if="items.length" class="px-4 sm:px-6">
-      <AppLink
+    <div v-if="items.length" class="pt-4 sm:pt-6">
+      <a
         v-for="contributor of items"
         :key="contributor.login"
         :href="`https://github.com/${contributor.login}`"
@@ -24,18 +23,20 @@
           border-light-border
           dark:border-dark-border
         "
+        style="color: inherit; text-decoration: none"
       >
-        <NuxtImg
+        <nuxt-img
           :alt="contributor.name"
           :srcset="`https://github.com/${contributor.login}.png?size=32 1x, https://github.com/${contributor.login}.png?size=64 2x`"
           :src="`https://github.com/${contributor.login}.png?size=32`"
           loading="lazy"
           class="h-8"
+          style="margin-top: 0px; margin-bottom: 0px"
         />
         <span class="inline-block px-2 leading-loose">
-          {{ contributor.name }}
+          {{ contributor.login }}
         </span>
-      </AppLink>
+      </a>
     </div>
   </div>
 </template>

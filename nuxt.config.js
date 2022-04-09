@@ -5,6 +5,9 @@ export default theme({
     primaryColor: "#3e76df",
   },
   //components: true,
+  target: "static",
+  buildModules: ["@nuxt/image"],
+  modules: ["@nuxt/image"],
   content: {
     //apiPrefix: "testVue#/",
     liveEdit: false,

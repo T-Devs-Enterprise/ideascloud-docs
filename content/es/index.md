@@ -8,9 +8,6 @@ features:
   - Feature 2
   - Feature 3
 fetchContributors: true
-#template:
-#  nested: guide
-#  self: guide
 ---
 
 <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
@@ -27,6 +24,7 @@ Your documentation has been created successfully!
 ## Features
 
 <list :items="features"></list>
-<list :items="$contributors"></list>
 
 <p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
+
+<molecules-github-user-list :items="$contributors"></molecules-github-user-list>
