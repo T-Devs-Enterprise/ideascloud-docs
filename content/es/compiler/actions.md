@@ -8,9 +8,14 @@ category: Compilador
 
 ## registerElement
 
-Disponible en: Generales
+Disponible en: `webapp-middlewares` `services` `functions`
 
-Registra un elemento en la base de datos.
+Registra un elemento dentro de la base de datos.
+
+| Nombre       | Descripción                                      |
+| ------------ | ------------------------------------------------ |
+| modelKey     | Nombre del modelo.                               |
+| mappingSetup | Atributos que se guardaran en el nuevo registro. |
 
 ```json
 {
@@ -28,7 +33,7 @@ Registra un elemento en la base de datos.
 
 ## redirectWhenMatch
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Redirige a una ruta específica cuando el valor de coincidencia es verdadero
 
@@ -42,7 +47,12 @@ Redirige a una ruta específica cuando el valor de coincidencia es verdadero
 }
 ```
 
-## updateElementById
+| Nombre          | Descripción                               |
+| --------------- | ----------------------------------------- |
+| match           | Valor booleano de coincidiencia evaluado. |
+| targetWhenMatch | Ruta o URL de redirección.                |
+
+ElementById
 
 Disponible en: middleware de aplicaciones web, servicios, funciones
 

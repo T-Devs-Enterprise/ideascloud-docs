@@ -1,0 +1,22 @@
+.nuxt-content table th {
+  /* my custom h1 style */
+	background-color: #f7fafc;
+	padding-top: 0.5714286em;
+	
+}
+
+.nuxt-content table td, table th {
+	border: 2px solid #edf2f7 ;
+	padding-left: 0.5714286em !important;
+}
+
+.dark-mode table th {
+  /* my custom h1 style */
+	background-color: #2d3748;
+	border: 2px solid #2d3748 ;
+}
+
+.dark-mode table td {
+  /* my custom h1 style */
+	border: 2px solid #2d3748 ;
+}

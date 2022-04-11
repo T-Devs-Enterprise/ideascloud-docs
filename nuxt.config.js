@@ -17,7 +17,10 @@ export default theme({
   },
 
   head: {
-    link: [{ rel: "icon", type: "image/x-icon", href: "/icon.png" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/icon.png" },
+      { rel: "stylesheet", type: "text/css", href: "/css/main.css" },
+    ],
   },
   i18n: {
     locales: () => [
