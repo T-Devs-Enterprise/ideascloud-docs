@@ -1,8 +1,9 @@
 ---
-title: Compilador
+title: Vision general
 description: ""
-position: 2
-category: Guide
+position: 3
+fetchContributors: true
+category: Compilador
 ---
 
 Inyecta información de contexto en una especificación RAW JSON.
@@ -39,3 +40,5 @@ Para usar una función agregar `|$|` antes del nombre del atributo y el compilad
   "fullname": "Smith, John"
 }
 ```
+
+<molecules-github-user-list :items="$contributors"></molecules-github-user-list>
