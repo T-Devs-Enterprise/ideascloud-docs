@@ -5,7 +5,7 @@ export default theme({
     primaryColor: "#3e76df",
   },
   //components: true,
-  target: "static",
+  //target: "static",
   buildModules: ["@nuxt/image"],
   modules: ["@nuxt/image"],
   content: {
@@ -14,6 +14,9 @@ export default theme({
     markdown: {
       remarkPlugins: ["~~/plugins/contributors.js"],
     },
+  },
+  serverMiddleware: {
+    "/_ipx": "~~/server/middleware/ipx.js",
   },
 
   head: {

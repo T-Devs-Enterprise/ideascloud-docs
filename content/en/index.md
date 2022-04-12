@@ -1,27 +1,54 @@
 ---
-title: Introduction
-description: ""
+title: Introducción
+description: "Bienvenido a la documentación de instalación de IdeasCloud. Aquí encontrarás activos útiles para crear cualquier tipo de proyecto."
 position: 1
-category: ""
+category: "Empezando"
 features:
-  - Feature 1
-  - Feature 2
-  - Feature 3
+  - Facil de aprender
+  - Admite desarrollo en JavaScript
+  - Conexión con base de datos NoSql
+  - Manejo de modelos y relaciones dentro de la BD
+  - Hosteo de paginas web (ReactJS, Vue, Nativo)
+  - Creación y manejo de endpoints (API Rest/Graphql)
+  - Facil desarrollo dentro del Editor Web y en VSCode
+concepts:
+  - Setup =>
+    Configuración del proyecto estructurada y definida en formato JSON.
+  - Compiler =>
+    Herramienta para aplicar información de contexto a una especificación RAW JSON.
+  - Action =>
+    Paso de un flujo de back-end (canalización) que ejecuta un trabajo específico, por ejemplo, registrar un elemento en un modelo de base de datos.
+  - Pipeline =>
+    Conjunto de acciones para ser ejecutadas secuencialmente, utilizadas en componentes de back-end.
+fetchContributors: true
 ---
 
-<img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
-<img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/>
+Bienvenido a la documentación de instalación de IdeasCloud. Aquí encontrarás activos útiles para crear cualquier tipo de proyecto.
 
-[Module]() for [NuxtJS](https://nuxtjs.org).
+## Que es IdeasCloud
 
-<alert type="success">
+IdeasCloud es una plataforma lowcode para crear aplicaciones serverless que sean eficientes y escalables. Principalmente utiliza archivos de tipo JSON con una sintaxis especial (que es facil de aprender y con una curva de aprendizaje baja) que son compilados por nuestro motor, tambien permite a los desarrolladores codificar en `JavaScript` y `Python` (no es estrictamente necesario saber de estos lenguajes de programación, entendiendo la sintaxis JSON usada por el motor ya tiene la libertad de realizar muchas cosas).
 
-Your documentation has been created successfully!
+IdeasCloud proporciona un nivel de abstracción por encima de los lenguajes de programación utilizando una nueva forma de desarrollar en archivos JSON. Esto les da a los desarrolladres la libertad de programar sea cual sea el lenguaje de programacion que dominen y a terceros que no estan relacionados con el mundo del desarrollo de software a entender e incluso desarrollar de una forma bastante intuitiva.
 
-</alert>
+## Filosofía
 
-## Features
+Nuestro objetivo es que los desarrolladores de software y afines tengan una mejora en su productividad, ficilitando el mantenimiento y la escalabilidad de sus apps, es por eso que IdeasCloud se encarga de facilitar los problemas de infraestructura, ayudando gran parte del proceso de DevOps, y permitiendote escalar facilmente de manera horizontal, sin tener que preocuparte de temas como el balance de cargas, costos de mantenimiento y fallas del servidor.
+
+## Características
 
 <list :items="features"></list>
 
-<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
+<alert>
+
+Puede ver mas detalle de nuestra de extension de VSCode [aquí](https://marketplace.visualstudio.com/items?itemName=IdeasCloud.icextension)!
+
+</alert>
+
+## Tutorial
+
+[Learn to develop your first project with IdeasCloud](https://tiare-llanten.medium.com/learn-to-develop-your-first-project-with-ideascloud-25cb7aeaa479)
+
+<p class="flex items-center">Disfruta del modo claro y oscuro:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
+
+<molecules-github-user-list :items="$contributors"></molecules-github-user-list>
