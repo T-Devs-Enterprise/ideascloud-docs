@@ -9,7 +9,7 @@ features:
   - Conexión con base de datos NoSql
   - Manejo de modelos y relaciones dentro de la BD
   - Hosteo de paginas web (ReactJS, Vue, Nativo)
-  - Creación y manejo de endpoints (API Rest)
+  - Creación y manejo de endpoints (API Rest/Graphql)
   - Facil desarrollo dentro del Editor Web y en VSCode
 concepts:
   - Setup =>
