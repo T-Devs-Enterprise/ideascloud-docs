@@ -6,6 +6,8 @@ fetchContributors: true
 category: Compilador
 ---
 
+<!-- <p class="flex items-center">Try switching between light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p> -->
+
 ## generateRandomString
 
 Disponible en: Generales.
