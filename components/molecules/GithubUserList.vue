@@ -3,6 +3,7 @@
     <div v-if="items.length" class="pt-4 sm:pt-6">
       <a
         v-for="contributor of items"
+        target="_blank"
         :key="contributor.login"
         :href="`https://github.com/${contributor.login}`"
         class="
