@@ -11,7 +11,7 @@ Añade la dependencia `ideascloud-cli` en tu dispositivo de forma global:
   <code-block label="Yarn" active>
 
 ```bash
-yarn add -g ideascloud-cli
+yarn global add ideascloud-cli
 ```
 
   </code-block>
