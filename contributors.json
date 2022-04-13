@@ -18,7 +18,7 @@
     "received_events_url": "https://api.github.com/users/franka107/received_events",
     "type": "User",
     "site_admin": false,
-    "contributions": 17
+    "contributions": 22
   },
   {
     "login": "emersonpuma777",
@@ -39,6 +39,27 @@
     "received_events_url": "https://api.github.com/users/emersonpuma777/received_events",
     "type": "User",
     "site_admin": false,
-    "contributions": 5
+    "contributions": 6
+  },
+  {
+    "login": "Galeid",
+    "id": 54345992,
+    "node_id": "MDQ6VXNlcjU0MzQ1OTky",
+    "avatar_url": "https://avatars.githubusercontent.com/u/54345992?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Galeid",
+    "html_url": "https://github.com/Galeid",
+    "followers_url": "https://api.github.com/users/Galeid/followers",
+    "following_url": "https://api.github.com/users/Galeid/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Galeid/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Galeid/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Galeid/subscriptions",
+    "organizations_url": "https://api.github.com/users/Galeid/orgs",
+    "repos_url": "https://api.github.com/users/Galeid/repos",
+    "events_url": "https://api.github.com/users/Galeid/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Galeid/received_events",
+    "type": "User",
+    "site_admin": false,
+    "contributions": 1
   }
 ]
