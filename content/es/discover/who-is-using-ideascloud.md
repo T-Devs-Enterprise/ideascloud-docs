@@ -10,7 +10,7 @@ category: Descubrir
 
 Estamos orgullosos de ayudar a varias empresas, a construir sus productos. Si esta interesado en aparecer aqui puede enviar un correo a `admin@ideascloud.io`.
 
-¡ Estamos dispuestos aponer tu logo en esta sección!
+¡ Estamos dispuestos a poner tu logo en esta sección!
 
 ## Empresas
 

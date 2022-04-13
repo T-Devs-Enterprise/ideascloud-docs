@@ -6,6 +6,12 @@ position: 8
 category: Conceptos
 ---
 
+<alert type="danger">
+
+Procura aun no usar este módulo, todavia esta en fase de pruebas
+
+</alert>
+
 Pipeline programado para ejecutarse en intervalos específicos.
 
 Estructura:
