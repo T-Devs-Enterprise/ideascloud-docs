@@ -9,7 +9,7 @@ Añade la dependencia `ideascloud-cli` en tu dispositivo de forma global:
 
 <alert type="warning">
 
-Node.js debe estar instalado en tu sistema ([Instalar Node.js en windows](https://nodejs.org/es/download/))
+Node.js debe estar instalado en tu sistema ([Instalar Node.js](https://nodejs.org/es/download/))
 
 </alert>
 

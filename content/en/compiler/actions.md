@@ -12,10 +12,10 @@ Disponible en: `webapp-middlewares` `services` `functions`
 
 Registra un elemento dentro de la base de datos.
 
-| Nombre       | Descripción                                      |
-| ------------ | ------------------------------------------------ |
-| modelKey     | Nombre del modelo.                               |
-| mappingSetup | Atributos que se guardaran en el nuevo registro. |
+| Nombre         | Descripción                                      |
+| -------------- | ------------------------------------------------ |
+| `modelKey`     | Nombre del modelo.                               |
+| `mappingSetup` | Atributos que se guardaran en el nuevo registro. |
 
 ```json
 {
@@ -37,6 +37,11 @@ Disponible en: `webapp-middlewares` `services` `functions`
 
 Redirige a una ruta específica cuando el valor de coincidencia es verdadero
 
+| Nombre            | Descripción                               |
+| ----------------- | ----------------------------------------- |
+| `match`           | Valor booleano de coincidiencia evaluado. |
+| `targetWhenMatch` | Ruta o URL de redirección.                |
+
 ```json
 {
   "action": "redirectWhenMatch",
@@ -47,21 +52,17 @@ Redirige a una ruta específica cuando el valor de coincidencia es verdadero
 }
 ```
 
-| Nombre          | Descripción                               |
-| --------------- | ----------------------------------------- |
-| match           | Valor booleano de coincidiencia evaluado. |
-| targetWhenMatch | Ruta o URL de redirección.                |
+## updateElementById
 
-ElementById
-
-Disponible en: middleware de aplicaciones web, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Actualiza un elemento de la base de datos por id.
 
-- Parámetros
-  - `modelKey` : Identificador del modelo.
-  - `itemId` : Identificador del elemento a actualizar.
-  - `updateData` : Datos del objeto a actualizar.
+| Nombre       | Descripción                                        |
+| ------------ | -------------------------------------------------- |
+| `modelKey`   | Identificador del modelo                           |
+| `itemId`     | Identificador del elemento a actualizar            |
+| `updateData` | Atributos que se actualizaran en el nuevo registro |
 
 ```json
 {
@@ -70,23 +71,32 @@ Actualiza un elemento de la base de datos por id.
     "modelKey": "user",
     "itemId": "&.clientParams.userId",
     "updateData": {
-      "phone": "&.clientParams.phone"
+      "|&|phone": "&.clientParams.phone"
     }
   }
 }
 ```
 
+<alert>
+
+El atributo `itemId` acepta directamente variables de contexto (`&.any`) no es necesario agregar `|&|` al nombre del atributo.
+
+</alert>
+
 ## updateElement
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
-Actualiza el elemento que coincide con los criterios aprobados (si se aprobó la opción múltiple, se actualizan varios elementos)
+Actualiza el elemento que coincide con los criterios aprobados (si se aprobó la opción múltiple, se actualizarán varios elementos)
 
-- Parámetros
-  - `modelKey` : Model identifier.
-  - `updateData` : Object data to be updated.
-  - `updateCriteria` : Criteria for selecting the records to update.
-  - `updateOptions` : Update options supported by mongodb.
+| Nombre           | Descripción                                          |
+| ---------------- | ---------------------------------------------------- |
+| `modelKey`       | Identificador del modelo                             |
+| `updateData`     | Atributos que se actualizaran en los registros       |
+| `updateCriteria` | Criterio para seleccionar los registros a actualizar |
+| `updateOptions`  | Opciones de actulizacion soportadas por mongodb      |
+
+Puedes ver mas detalle de `updateOptions` en la [documentación de Mongo](https://www.mongodb.com/docs/manual/reference/method/db.collection.update/).
 
 ```json
 {
@@ -108,13 +118,14 @@ Actualiza el elemento que coincide con los criterios aprobados (si se aprobó la
 
 ## removeElementById
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
-Elimina un elemento por id
+Elimina un elemento en la base de datos por id
 
-- Parámetros
-  - `modelKey` : Identificador del modelo.
-  - `itemId` : Identificador del elemento a actualizar.
+| Nombre     | Descripción                           |
+| ---------- | ------------------------------------- |
+| `modelKey` | Identificador del modelo              |
+| `itemId`   | Identificador del elemento a eliminar |
 
 ```json
 {
@@ -126,15 +137,22 @@ Elimina un elemento por id
 }
 ```
 
+<alert>
+
+El atributo `itemId` acepta directamente variables de contexto (`&.any`) no es necesario agregar `|&|` al nombre del atributo.
+
+</alert>
+
 ## findOneElement
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Encuentre el elemento que coincida con los criterios
 
-- Parámetros
-  - `modelKey` : Identificador del modelo.
-  - `mappingSetup` : Un objeto que tiene los criterios para la búsqueda.
+| Nombre         | Descripción                      |
+| -------------- | -------------------------------- |
+| `modelKey`     | Identificador del modelo         |
+| `mappingSetup` | Objeto con criterios de busqueda |
 
 ```json
 {
@@ -150,13 +168,16 @@ Encuentre el elemento que coincida con los criterios
 
 ## elementsAggregation
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Resuelve la agregación especificada (ejecuta una agregación mongodb al modelo especificado)
 
-- Parámetros
-  - `modelKey` : Identificador del modelo.
-  - `aggregationPipeline` : Una lista con los criterios de agregación.
+| Nombre                | Descripción                      |
+| --------------------- | -------------------------------- |
+| `modelKey`            | Identificador del modelo         |
+| `aggregationPipeline` | Objeto con criterios de busqueda |
+
+Puedes ver mas información sobre las agregaciones [aquí.](https://www.mongodb.com/docs/manual/aggregation/)
 
 ```json
 {
@@ -184,9 +205,9 @@ Resuelve la agregación especificada (ejecuta una agregación mongodb al modelo 
 
 ## resolveFirstElementOfOutputArray
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
-Resuelve el primer elemento de la salida de [elementsAggregation](#elementsaggregation)
+Resuelve el primer elemento de la salida de un arrat por ejemplo la salida de [elementsAggregation](#elementsaggregation)
 
 ```json
 {
@@ -197,9 +218,9 @@ Resuelve el primer elemento de la salida de [elementsAggregation](#elementsaggre
 
 ## randomizeOutputArray
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
-Resuelve una lista aleatoria de [resolvefirstelementofoutputarray](#resolvefirstelementofoutputarray)
+Resuelve un elemento aleatorio del resultado previo si es un array.
 
 ```json
 {
@@ -208,56 +229,65 @@ Resuelve una lista aleatoria de [resolvefirstelementofoutputarray](#resolvefirst
 }
 ```
 
-## randomizeOutputArray
+## stopIfDoesntMatch
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
-Detiene la ejecución de la canalización si no se cumple la condición.
+Detiene la ejecución del pipeline si no se cumple la condición.
 
-- Parámetros:
-  - `match` : Criterio de búsqueda.
-  - `onError` : Respuesta si hay error.
-    - `status` : Código de respuesta.
-    - `details` : Mensaje de respuesta.
+| Nombre            | Descripción                                  |
+| ----------------- | -------------------------------------------- |
+| `match`           | Criterio de busqueda                         |
+| `onError`         | Objeto con detalle de respuesta si hay error |
+| `onError.status`  | Codigo de respuesta                          |
+| `onError.details` | Mensaje de respuesta                         |
 
 ```json
 {
-  "action": "randomizeOutputArray",
-  "params": {}
+  "match": true,
+  "onError": {
+    "status": 401,
+    "details": "Invalid session"
+  }
 }
 ```
 
 ## resolveActionParams
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
-Resuelve parámetros de acción analizados, útiles para mapear salidas de canalización.
+Resuelve parámetros de acción analizados, útiles para mapear salidas de pipeline.
 
-- Parámetros: Los parámetros son dinámicos.
+<alert type="success">
 
-```json[#Input]
+Los parámetros son dinámicos.
+
+</alert>
+
+```json [#Input]
 {
   "action": "resolveActionParams",
   "params": {
-    "|&|clientParams": "&.clientParams.title"
+    "|&|title": "&.clientParams.title"
   }
 }
 ```
 
-```json[#Output]
+```json [#Output]
 {
-  "clientParams": "The title!"
+  "title": "The title!"
 }
 ```
 
 ## replaceRoot
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Resuelve el atributo newRoot, útil para el mapeo
 
-- Parámetros:
-  - `newRoot` : Aquí se especifica la nueva raíz del objeto.
+| Nombre    | Descripción                |
+| --------- | -------------------------- |
+| `newRoot` | La nueva raíz del pipeline |
 
 ```json
 {
@@ -270,22 +300,23 @@ Resuelve el atributo newRoot, útil para el mapeo
 
 ## sendRAWEmail
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Envía un correo electrónico con contenido HTML, utiliza el módulo Nodemailer
 
-- Parámetros:
-  - `emailTransporterSetup`
-    - `host`
-    - `port`
-    - `secure`
-    - `auth`
-    - `email`
-    - `password`
-  - `emailSetup`
-    - `subject`
-    - `to`
-    - `html`
+| Nombre                                | Descripción                              |
+| ------------------------------------- | ---------------------------------------- |
+| `emailTransporterSetup`               | Configuración del transportador de email |
+| `emailTransporterSetup.host`          | Host                                     |
+| `emailTransporterSetup.port`          | Port                                     |
+| `emailTransporterSetup.secure`        | Booleano                                 |
+| `emailTransporterSetup.auth`          | Objeto con autentificación               |
+| `emailTransporterSetup.auth.email`    | Email                                    |
+| `emailTransporterSetup.auth.password` | Password                                 |
+| `emailSetup`                          | Configuración de destino                 |
+| `emailSetup.subject`                  | Asunto                                   |
+| `emailSetup.to`                       | Email destinatario                       |
+| `emailSetup.html`                     | Cuerpo del mensaje                       |
 
 ```json
 {
@@ -311,17 +342,18 @@ Envía un correo electrónico con contenido HTML, utiliza el módulo Nodemailer
 
 ## sendSlackMessage
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Envía un mensaje de Slack.
 
-- Parámetros:
-  - `webhookUrl`
-  - `message`
-    - `title`
-    - `text`
-    - `smallText`
-    - `color`
+| Nombre              | Descripción                    |
+| ------------------- | ------------------------------ |
+| `webhookUrl`        | Url del webhook                |
+| `message`           | Objeto con detalle del mensaje |
+| `message.title`     | Título del mensaje             |
+| `message.text`      | Cuerpo del mensaje             |
+| `message.smallText` | Submensaje                     |
+| `message.color`     | Color del mensaje              |
 
 ```json
 {
@@ -338,31 +370,67 @@ Envía un mensaje de Slack.
 }
 ```
 
+<alert>
+
+Puedes ver mas información en la [API de Slack](https://api.slack.com/)
+
+</alert>
+
 ## sshExecution
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Ejecuta un comando ssh a la conexión especificada.
+
+| Nombre               | Descripción              |
+| -------------------- | ------------------------ |
+| `config`             | Objecto de configuracion |
+| `config.host`        | Host                     |
+| `config.user`        | Usuario                  |
+| `config.pass`        | Contraseña               |
+| `commands`           | List de comandos         |
+| `[commands].command` | Comando                  |
+| `[commands].options` | Opciones del comando     |
 
 ```json
 {
   "action": "sshExecution",
-  "params": {}
+  "params": {
+    "config": {
+      "host": "xxxxx",
+      "user": "xxxxx",
+      "pass": "xxxxx"
+    },
+    "commands": [
+      {
+        "command": "ls",
+        "options": {}
+      },
+      {
+        "command": "echo hello",
+        "options": {}
+      },
+      {
+        "command": "echo world",
+        "options": {}
+      }
+    ]
+  }
 }
 ```
 
 ## httpRequest
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Realiza y resuelve una llamada HTTP.
 
-- Parámetros:
-  - `url`
-  - `method`
-  - `headers`
-  - `body`
-    - `content`
+| Nombre    | Descripción                      |
+| --------- | -------------------------------- |
+| `url`     | Url a la que se hara la petición |
+| `method`  | Metodo de la petición            |
+| `headers` | Cabecera de la peticion          |
+| `body`    | Cuerpo de la petición            |
 
 ```json
 {
@@ -382,15 +450,16 @@ Realiza y resuelve una llamada HTTP.
 
 ## conditionalPipelineExecution
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Ejecuta una canalización específica cuando se cumple la condición.
 
-- Parámetros:
-  - `defaultPipeline` : Lista de acciones que se ejecutarán por defecto si no se cumple la condición.
-  - `pipelines`
-    - `condition` : Condición a evaluar para ejecutar la tubería.
-    - `pipeline` : Lista de acciones a ejecutar.
+| Nombre                 | Descripción                                                                   |
+| ---------------------- | ----------------------------------------------------------------------------- |
+| `defaultPipeline`      | Lista de acciones que se ejecutarán por defecto si no se cumple la condición. |
+| `pipelines`            | Lista de casos                                                                |
+| `[pipelines]condition` | Condición del caso                                                            |
+| `[pipelines]pipeline`  | Pipeline a ejecutar si la condición es verdadera                              |
 
 ```json
 {
@@ -460,13 +529,14 @@ Ejecuta una canalización específica cuando se cumple la condición.
 
 ## executeFunction
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
-Ejecutar una función almacenada.
+Ejecuta una [función almacenada](/concepts/functions).
 
-- Parámetros:
-  - `functionKey` : Identificador de función.
-  - `params` : Parámetros
+| Nombre        | Descripción          |
+| ------------- | -------------------- |
+| `functionKey` | Nombre de la función |
+| `params`      | Parámetros           |
 
 ```json
 {
@@ -482,12 +552,13 @@ Ejecutar una función almacenada.
 
 ## setCookiesWhenRequired
 
-Disponible en: Web app middlewares, servicios, funciones
+Disponible en: `webapp-middlewares` `services` `functions`
 
 Establece cookies cuando el cliente lo ha habilitado.
 
-- Parámetros:
-  - `mappingSetup` : Mapa de cookies.
+| Nombre         | Descripción     |
+| -------------- | --------------- |
+| `mappingSetup` | Mapa de cookies |
 
 ```json
 {

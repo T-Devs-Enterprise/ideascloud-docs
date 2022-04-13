@@ -25,7 +25,7 @@ fetchContributors: true
 
 Bienvenido a la documentación de instalación de IdeasCloud. Aquí encontrarás activos útiles para crear cualquier tipo de proyecto.
 
-## Que es IdeasCloud
+## ¿Que es IdeasCloud?
 
 IdeasCloud es una plataforma lowcode para crear aplicaciones serverless que sean eficientes y escalables. Principalmente utiliza archivos de tipo JSON con una sintaxis especial (que es facil de aprender y con una curva de aprendizaje baja) que son compilados por nuestro motor, tambien permite a los desarrolladores codificar en `JavaScript` y `Python` (no es estrictamente necesario saber de estos lenguajes de programación, entendiendo la sintaxis JSON usada por el motor ya tiene la libertad de realizar muchas cosas).
 
@@ -33,7 +33,7 @@ IdeasCloud proporciona un nivel de abstracción por encima de los lenguajes de p
 
 ## Filosofía
 
-Nuestro objetivo es que los desarrolladores de software y afines tengan una mejora en su productividad, ficilitando el mantenimiento y la escalabilidad de sus apps, es por eso que IdeasCloud se encarga de facilitar los problemas de infraestructura, ayudando gran parte del proceso de DevOps, y permitiendote escalar facilmente de manera horizontal, sin tener que preocuparte de temas como el balance de cargas, costos de mantenimiento y fallas del servidor.
+Nuestro objetivo es que los desarrolladores de software y afines tengan una mejora en su productividad, facilitando el mantenimiento y la escalabilidad de sus apps, es por eso que IdeasCloud se encarga de facilitar los problemas de infraestructura, ayudando gran parte del proceso de DevOps, y permitiendote escalar facilmente de manera horizontal, sin tener que preocuparte de temas como el balance de cargas, costos de mantenimiento y fallas del servidor.
 
 ## Características
 
